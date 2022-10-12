@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
+from pickle import TRUE
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,7 +28,16 @@ SECRET_KEY = 'django-insecure-ryu(de3(=c^6dl4ky!5+hv+q3m7-o(8i$d4eise55_m-2r3*^-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+CORS_ALLOWED_ORIGINS= [
+'https://example.com',
+'https://subexample.com',
+'https://localhost:8000',
+'https://127.0.0.1:9000',
+]
+
+#CORS_ALLOW_ALL_ORIGINS = TRUE
 
 
 # Application definition
@@ -41,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'aplicacion',
+    'corsheaders',
 ]
 
 SIMPLE_JWT = {
@@ -71,6 +82,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'Sprint.urls'
