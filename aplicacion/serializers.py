@@ -4,4 +4,4 @@ from .models import Entidad
 class EntidadSerializer(serializers.ModelSerializer):
     class Meta:
         model=Entidad
-        fields='_all_'
+        fields='__all__'

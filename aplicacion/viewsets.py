@@ -4,5 +4,5 @@ from . import  serializers
 
 class EntidadViewset(viewsets.ModelViewSet):
     queryset=models.Entidad.objects.all()
-    serializers_class=serializers.EntidadSerializer
+    serializer_class=serializers.EntidadSerializer
     
