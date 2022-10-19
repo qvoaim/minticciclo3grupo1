@@ -37,7 +37,7 @@ ALLOWED_HOSTS = ['*']
 #'https://127.0.0.1:9000',
 #]
 
-CORS_ALLOW_ALL_ORIGINS = TRUE
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 # Application definition
